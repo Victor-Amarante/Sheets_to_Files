@@ -32,6 +32,7 @@ for sheet in wb:
     new_wb.active = new_wb.create_sheet(sheet.title)
     for row in sheet.rows:
         new_wb.active.append([cell.value for cell in row])
+    new_wb.remove(new_wb['Sheet'])
     # Salva o novo arquivo Excel com o nome da aba atual
     new_wb.save(f'{sheet.title}.xlsx')
 
