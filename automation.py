@@ -2,6 +2,10 @@ import pandas as pd
 from openpyxl import Workbook
 from openpyxl.utils.dataframe import dataframe_to_rows
 from openpyxl import load_workbook
+from tkinter import *  
+from tkinter import messagebox  
+ 
+messagebox.showinfo("Informação", "O programa será executada. Aguarde!") 
 
 # Carrega os dados em um DataFrame do pandas
 df = pd.read_excel('Base.xlsx')
@@ -36,3 +40,5 @@ for sheet in wb:
     # Salva o novo arquivo Excel com o nome da aba atual
     new_wb.save(f'{sheet.title}.xlsx')
 
+
+messagebox.showinfo("Informação", "O programa foi executado!") 
